@@ -30,7 +30,6 @@ func main() {
 	})
 	if err != nil {
 		logger.Fatalf("could not create fluentd client: %v\n", err)
-		continue
 	}
 
 	for {
@@ -40,6 +39,7 @@ func main() {
 		}
 		if err != nil {
 			logger.Printf("could not read line from stdin: %v\n", err)
+			continue
 		}
 		err = client.EncodeAndPostData(*tag, time.Now(), line)
 		if err != nil {
