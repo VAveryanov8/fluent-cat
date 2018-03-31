@@ -30,6 +30,7 @@ func main() {
 	})
 	if err != nil {
 		logger.Fatalf("could not create fluentd client: %v\n", err)
+		continue
 	}
 
 	for {
