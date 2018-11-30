@@ -43,7 +43,7 @@ func main() {
 		}
 		err = client.EncodeAndPostData(*tag, time.Now(), line)
 		if err != nil {
-			logger.Printf("could not send event: %s\n", err)
+			logger.Printf("could not send event: %v\n", err)
 		}
 	}
 }
